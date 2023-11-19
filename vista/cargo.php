@@ -27,6 +27,9 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
   $sql = $conexion->query(" SELECT  * from cargo ");
   ?>
   <a href="registro_cargo.php" class="btn btn primary btn rounded mb-2"><i class="fa-solid fa-plus"></i> &nbsp;Registrar</a>
+  <div class="text-right mb-2">
+    <a href="fpdf/Reportecargo.php" target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i>Generar Reportes</a>
+  </div>
   <table class="table table-bordered table-hover w-100" id="example">
     <thead>
       <tr>

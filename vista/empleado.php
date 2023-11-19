@@ -21,7 +21,7 @@ if (empty($_SESSION['nombre']) and empty($_SESSION['apellido'])) {
 
   include "../modelo/conexion.php";
   include "../controlador/controlador_modificar_empleado.php";
-  include "../controlador/controlador_eliminar_empleado.php"; 
+  include "../controlador/controlador_eliminar_empleado.php";
 
 
   $sql = $conexion->query("SELECT
@@ -36,7 +36,11 @@ FROM
 	INNER JOIN cargo ON empleado.cargo = cargo.id_cargo ");
 
   ?>
+
   <a href="registro_empleado.php" class="btn btn primary btn rounded mb-2"><i class="fa-solid fa-plus"></i> &nbsp;Registrar</a>
+  <div class="text-right mb-2">
+    <a href="fpdf/ReporteEmpleado.php" target="_blank" class="btn btn-success"><i class="fas fa-file-pdf"></i>Generar Reportes</a>
+  </div>
   <table class="table table-bordered table-hover w-100" id="example">
     <thead>
       <tr>
@@ -93,7 +97,7 @@ FROM
                       <?php
                       $sql2 = $conexion->query(" select * from cargo ");
                       while ($datos2 = $sql2->fetch_object()) { ?>
-                        <option <?=$datos->cargo==$datos2->id_cargo ? 'selected' : '' ?> value="<?= $datos2->id_cargo ?>"><?= $datos2->nombre ?></option>
+                        <option <?= $datos->cargo == $datos2->id_cargo ? 'selected' : '' ?> value="<?= $datos2->id_cargo ?>"><?= $datos2->nombre ?></option>
                       <?php }
                       ?>
                     </select>
