@@ -27,7 +27,6 @@ error_reporting(0);
     <script src="public/pnotify/js/pnotify.buttons.js">
     </script>
 </head>
-
 <body>
     <?php
     date_default_timezone_set("America/Bogota");
