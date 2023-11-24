@@ -8,6 +8,7 @@ if (!empty($_GET["txtfechainicio"]) and !empty($_GET["txtfechafinal"]) and !empt
    $empleado = $_GET["txtempleado"];
 
 
+
    class PDF extends FPDF
    {
 
@@ -107,7 +108,7 @@ if ($empleado == "todos") {
    asistencia
    INNER JOIN empleado ON asistencia.id_empleado = empleado.id_empleado
    INNER JOIN cargo ON empleado.cargo = cargo.id_cargo
-   where entrada BETWEEN '$fechaInicio' and '$fechaFinal' order by id_empleado asc");
+   where DATE(entrada) BETWEEN '$fechaInicio' and '$fechaFinal' order by id_empleado asc");
 } else {
 
       $sql = $conexion->query(" SELECT
@@ -124,7 +125,7 @@ if ($empleado == "todos") {
    asistencia
    INNER JOIN empleado ON asistencia.id_empleado = empleado.id_empleado
    INNER JOIN cargo ON empleado.cargo = cargo.id_cargo
-   where asistencia.id_empleado=$empleado and entrada BETWEEN '$fechaInicio' and '$fechaFinal' order by id_asistencia asc");
+   where asistencia.id_empleado=$empleado and DATE(entrada) BETWEEN '$fechaInicio' and '$fechaFinal' order by id_asistencia asc");
 }
 
 

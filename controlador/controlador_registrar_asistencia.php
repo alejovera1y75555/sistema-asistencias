@@ -90,7 +90,7 @@ if (!empty($_POST['btnsalida'])) {
         $id = $conexion->query("select id_empleado from empleado where cedula='$cedula'");
         if ($consulta->fetch_object()->total > 0) {
 
-            $fecha = date("Y-m-d h:i:s");
+            $fecha = date("Y-m-d H:i:s");
             $id_empleado = $id->fetch_object()->id_empleado;
             $busqueda = $conexion->query("select id_asistencia,entrada from asistencia where id_empleado=$id_empleado order by id_asistencia desc limit 1");
 
