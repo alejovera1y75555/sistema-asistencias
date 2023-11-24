@@ -15,6 +15,51 @@
 </head>
 
 <body>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Botones de navegación</title>
+    </head>
+
+    <body>
+
+
+
+        <button onclick="goToPage()">Regresar</button>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+
+
+            function goToPage() {
+
+                window.location.href = '../../indexx.php';
+            }
+
+
+            var btn = document.querySelector('button');
+            btn.style.padding = '5px 10px';
+            btn.style.fontSize = '15px';
+            btn.style.cursor = 'pointer';
+            btn.style.border = 'none';
+            btn.style.background = '#ADD136';
+            btn.style.color = '#fff';
+            btn.style.borderRadius = '5px';
+
+
+            document.body.style.marginTop = '30px';
+
+
+            document.body.style.marginLeft = '30px';
+        </script>
+
+    </body>
+
+    </html>
+
     <!-- <img class="wave" src="img/wave.png"> -->
     <div class="container">
         <div class="img">
